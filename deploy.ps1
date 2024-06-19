@@ -14,5 +14,6 @@ if (Test-Path -Path "dist") {
     Remove-Item -Recurse -Force "dist"
 }
 
+& pip install -r requirements.txt
 & python setup.py bdist_wheel
 & twine upload --repository-url "$RepoUrl" -u "$User" -p "$Pwd" dist/*
